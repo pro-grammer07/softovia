@@ -2,6 +2,7 @@
 import React from 'react';
 import { Check } from 'lucide-react';
 
+
 const PlanCard = ({ 
   plan, 
   customTheme = null, 
@@ -22,8 +23,8 @@ const PlanCard = ({
       className={`
         ${theme.bgColor} 
         ${showBorder ? `border ${theme.border}` : ''} 
-        rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300
-        ${plan.featured ? 'ring-2 ring-blue-300 scale-105' : ''}
+        rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 h-130 w-90 flex flex-col hover:scale-105
+        ${plan.featured ? 'ring-2 ring-blue-200 scale-100' : ''}
         ${className}
       `}
     >
@@ -49,14 +50,6 @@ const PlanCard = ({
         </div>
       </div>
 
-      {/* Subtitle (if exists) */}
-      {plan.subtitle && (
-        <div className="mb-4">
-          <p className={`text-sm font-medium ${theme.textColor}`}>
-            {plan.subtitle}
-          </p>
-        </div>
-      )}
 
       {/* Features */}
       <div className="mb-8">
@@ -84,10 +77,11 @@ const PlanCard = ({
       <button
         onClick={handlePlanSelect}
         className={`
-          w-full py-3 px-4 rounded-lg font-medium text-sm
-          ${theme.buttonBg} ${theme.buttonText} ${theme.buttonHover}
+          w-full py-3 px-4 rounded-lg font-medium text-sm mt-auto
+          ${theme.buttonBg} ${theme.buttonText} ${theme.buttonHover} ${theme.borderHover} ${theme.textHover}
           transition-colors duration-200
-          focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
+          focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 
+          cursor-pointer
         `}
       >
         {plan.buttonText}
@@ -96,7 +90,7 @@ const PlanCard = ({
       {/* Featured badge (optional) */}
       {plan.featured && (
         <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-          <span className="bg-blue-500 text-white text-xs px-3 py-1 rounded-full font-medium">
+          <span className="bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-medium">
             Most Popular
           </span>
         </div>

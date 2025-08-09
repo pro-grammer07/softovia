@@ -13,7 +13,7 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center space-x-4 cursor-pointer">
           <img src={logo} alt="Softovia Logo" className="h-12 w-16" />
-          <span className="text-blue-500 text-3xl font-semibold tracking-wide">
+          <span className="text-primary text-3xl font-semibold tracking-wide">
             SOFTOVIA
           </span>
         </div>

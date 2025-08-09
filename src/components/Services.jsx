@@ -8,15 +8,15 @@ import { styles } from '../styles';
 const Services = () => {
 
   return (
-    <>
+    <div className="mt-[200px]">
 
     <h1 className={styles.heroHeadText}>Our Services</h1>
-    <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-8">
+    <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-[48px]">
       {services.map((item) => (
         <ServiceCard key={item.id} service={item} />
       ))}
     </div>
-    </>
+    </div>
   );
 };
 

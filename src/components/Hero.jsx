@@ -26,20 +26,20 @@ const Hero = () => {
             {/* Features */}
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center">
-                  <Check className="w-3 h-3 text-blue-500" />
+                <div className="w-5 h-5 bg-blue-200 rounded-full flex items-center justify-center">
+                  <Check className="w-3 h-3 text-blue-600" />
                 </div>
                 <span className="text-gray-700">Fast delivery</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center">
-                  <Check className="w-3 h-3 text-blue-500" />
+                <div className="w-5 h-5 bg-blue-200 rounded-full flex items-center justify-center">
+                  <Check className="w-3 h-3 text-blue-600" />
                 </div>
                 <span className="text-gray-700">Low price</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center">
-                  <Check className="w-3 h-3 text-blue-500" />
+                <div className="w-5 h-5 bg-blue-200 rounded-full flex items-center justify-center">
+                  <Check className="w-3 h-3 text-blue-600" />
                 </div>
                 <span className="text-gray-700">High quality</span>
               </div>

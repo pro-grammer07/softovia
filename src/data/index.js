@@ -9,6 +9,8 @@ import { crm,
     zapier_webhooks } from "../assets";
 
 
+// **************************************** SERVICES *****************************************
+  
 
 export const services = [
   {
@@ -75,7 +77,7 @@ export const services = [
 
 
 
-// index.js - Plans data
+// **************************************** PLANS *****************************************
 export const plansData = [
   {
     id: 1,
@@ -84,6 +86,7 @@ export const plansData = [
     price: 10,
     currency: "$",
     period: "Screen",
+    subtitle: "Includes",
     features: [
       "Placeholder",
       "Placeholder", 
@@ -96,11 +99,13 @@ export const plansData = [
       bgColor: "bg-white",
       textColor: "text-gray-900",
       descriptionColor: "text-gray-600",
-      buttonBg: "bg-blue-500",
+      buttonBg: "bg-blue-600",
       buttonText: "text-white",
-      buttonHover: "hover:bg-blue-600",
-      checkmarkBg: "bg-blue-100",
-      checkmarkIcon: "text-blue-500",
+      buttonHover: "hover:bg-white",
+      textHover: "hover:text-blue-600",
+      borderHover: "hover:border-blue-600 hover:border-2",
+      checkmarkBg: "bg-blue-200",
+      checkmarkIcon: "text-blue-600",
       border: "border-gray-200"
     }
   },
@@ -111,6 +116,7 @@ export const plansData = [
     price: 10,
     currency: "$", 
     period: "Screen",
+    featured: true,
     subtitle: "Everything in Starter Plus",
     features: [
       "Placeholder",
@@ -120,17 +126,18 @@ export const plansData = [
       "Placeholder"
     ],
     buttonText: "Choose Plan",
-    featured: true,
     theme: {
       type: "primary",
-      bgColor: "bg-blue-500",
+      bgColor: "bg-blue-600",
       textColor: "text-white",
       descriptionColor: "text-blue-100", 
       buttonBg: "bg-white",
-      buttonText: "text-blue-500",
-      buttonHover: "hover:bg-gray-50",
-      checkmarkBg: "bg-blue-400",
-      checkmarkIcon: "text-white",
+      buttonText: "text-blue-600",
+      buttonHover: "hover:bg-blue-600",
+      textHover: "hover:text-white",
+      borderHover: "hover:border-white hover:border-2",
+      checkmarkBg: "bg-white",
+      checkmarkIcon: "text-blue-600",
       border: "border-blue-400"
     }
   },
@@ -155,11 +162,13 @@ export const plansData = [
       bgColor: "bg-white", 
       textColor: "text-gray-900",
       descriptionColor: "text-gray-600",
-      buttonBg: "bg-blue-500",
+      buttonBg: "bg-blue-600",
       buttonText: "text-white", 
-      buttonHover: "hover:bg-blue-600",
-      checkmarkBg: "bg-blue-100",
-      checkmarkIcon: "text-blue-500",
+      buttonHover: "hover:bg-white",
+      textHover: "hover:text-blue-600",
+      borderHover: "hover:border-blue-600 hover:border-2",
+      checkmarkBg: "bg-blue-200",
+      checkmarkIcon: "text-blue-600",
       border: "border-gray-200"
     }
   }
@@ -231,4 +240,25 @@ export const themePresets = {
   }
 };
 
-export default plansData;
+
+// **************************************** TEAM *****************************************
+
+
+// footer.js data
+export const footerData = {
+  logo: {
+    name: "SOFTOVIA"
+  },
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+  navigationLinks: [
+    { name: "Home", href: "#home" },
+    { name: "Our Work", href: "#work" },
+    { name: "Our Team", href: "#team" },
+    { name: "Contact Us", href: "#contact" }
+  ],
+  legalLinks: [
+    { name: "Terms & Conditions", href: "#terms" },
+    { name: "Privacy Policy", href: "#privacy" }
+  ],
+  copyright: "© 2023 Codifyz • All Rights Reserved"
+};

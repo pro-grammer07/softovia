@@ -3,7 +3,7 @@ import { Star } from 'lucide-react';
 
 const Stats = () => {
   return (
-    <section className="bg-blue-500 text-white py-12 lg:py-16 mt-16 lg:mt-24">
+    <section className="bg-blue-600 text-white py-12 lg:py-16 mt-16 lg:mt-24">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Stat 1 */}
