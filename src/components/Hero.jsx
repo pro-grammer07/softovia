@@ -3,6 +3,7 @@ import { Check } from "lucide-react";
 import hero_image from "../assets/Hero.png"; // Assuming you have a hero image
 import { Button } from './Button';
 import SectionWrapper from '../hoc';
+import { styles } from '../styles';
 
 const Hero = () => {
   return (
@@ -14,7 +15,7 @@ const Hero = () => {
           <div className="space-y-6">
             <div className="space-y-4">
               <p className="text-gray-600 text-sm lg:text-base">Low-Code Development Agency</p>
-              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
+              <h1 className={styles.heroHeadText}>
                 Start no-code, grow with code.
               </h1>
               <p className="text-gray-600 text-lg lg:text-xl">
@@ -58,7 +59,7 @@ const Hero = () => {
           </div>
           
         <div>
-            <img src={hero_image} alt="Hero Image" className='w-120 h-100 ml-10' />
+            <img src={hero_image} alt="Hero Image" className='w-110 h-100 ml-10' />
         </div>
         </div>
       </main>

@@ -11,7 +11,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         {/* Logo */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 cursor-pointer">
           <img src={logo} alt="Softovia Logo" className="h-12 w-16" />
           <span className="text-blue-500 text-3xl font-semibold tracking-wide">
             SOFTOVIA
@@ -41,8 +41,8 @@ const Header = () => {
             p-6 md:p-0
           `}
         >
-          <span className={styles.heroSubText}>Our Work</span>
-          <span className={styles.heroSubText}>Our Team</span>
+          <span className={styles.navLinkText}>Our Work</span>
+          <span className={styles.navLinkText}>Our Team</span>
           <Button variant="default" className="w-full md:w-40 h-12">
             Contact Us
           </Button>
