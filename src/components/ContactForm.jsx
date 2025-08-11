@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Calendar } from 'lucide-react';
 
+
 // ContactForm.jsx Component
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -36,9 +37,9 @@ export const ContactForm = () => {
   return (
     <div className="bg-white rounded-2xl p-8 shadow-sm">
       <form action="https://api.web3forms.com/submit" method="POST" className="space-y-6">
-        
-        <input type="hidden" name="access_key" value="b6e03ff6-624b-46f4-aa3d-aeab6cd61f1e" />
-       
+
+        <input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORM_ACCESS_KEY} />
+
         {/* Name and Business Name Row */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
@@ -106,7 +107,6 @@ export const ContactForm = () => {
                 required
                 className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
               />
-              <Calendar className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
             </div>
           </div>
         </div>
@@ -132,7 +132,7 @@ export const ContactForm = () => {
         <div>
           <button
             type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer"
+            className="bg-blue-600 border-2 border-white hover:bg-white hover:text-blue-600 hover:border-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer"
           >
             Submit
           </button>

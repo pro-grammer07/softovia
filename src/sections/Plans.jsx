@@ -1,7 +1,7 @@
 // Plans.jsx
 import React from 'react';
-import PlanCard from './PlanCard';
-import { plansData, themePresets, createCustomTheme } from '../data'; 
+import PlanCard from '../components/PlanCard';
+import { plansData, themePresets, createCustomTheme } from '../data/plans'; 
 import SectionWrapper from '../hoc';
 import { styles } from '../styles';
 
@@ -30,7 +30,7 @@ const Plans = ({
     <div className="mt-[200px]">
 <h1 className={styles.heroHeadText}>Project Plans</h1>
     <section className={`py-12 px-2 mt-[48px] ${containerClassName}`}>
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-8xl mx-auto">
         {/* Section Header (Optional) */}
         {showTitle && (
           <div className="text-center mb-12">

@@ -2,15 +2,15 @@ import { useState } from 'react'
 import viteLogo from '/vite.svg'
 import './index.css'
 import Header from './components/Header'
-import Hero from './components/Hero'
+import Hero from './sections/Hero'
 import Stats from './components/Stats'
-import Services from './components/Services'
-import Plans from './components/Plans'
-import Projects from './components/Projects'
+import Services from './sections/Services'
+import Plans from './sections/Plans'
+import Projects from './sections/Projects'
 import projectsData from './data/projects'
 import ProjectDetail from './components/ProjectDetail'
-import Team from './components/Team'
-import Contact from './components/Contact'
+import Team from './sections/Team'
+import Contact from './sections/Contact'
 import Footer from './components/Footer'
 
 
@@ -20,8 +20,10 @@ function App() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const handleProjectSelect = (project) => {
+    console.log("App Selected project:", project);
     setSelectedProject(project);
     setCurrentView('detail');
+    scrollTo(0, 0);
   };
 
   const handleBackToProjects = () => {
@@ -37,10 +39,10 @@ function App() {
     <>
 
 
-        <div className="min-h-screen">
+        <div className="min-h-screen bg-[#EFF7FF]">
       {currentView === 'projects' && (
         <>
-             <Header />
+      <Header />
       <Hero />
       <Stats />
       <Services />

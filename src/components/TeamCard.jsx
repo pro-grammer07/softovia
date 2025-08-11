@@ -1,6 +1,6 @@
-export const TeamCard = ({ member }) => {
+const TeamCard = ({ member }) => {
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 border border-gray-100">
+    <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:scale-110 ">
       <div className="mb-6">
         <img
           src={member.image}
@@ -25,3 +25,5 @@ export const TeamCard = ({ member }) => {
     </div>
   );
 };
+
+export default TeamCard;

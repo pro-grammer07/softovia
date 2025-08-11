@@ -1,5 +1,7 @@
+import { project1_1 } from "../assets";
+
 // index.js - Projects data
-export const projectsData = [
+const projectsData = [
   {
     id: 1,
     title: "Website Development Service for Media Production Company",
@@ -37,7 +39,7 @@ export const projectsData = [
       "Improved client satisfaction scores"
     ],
     gallery: [
-      "/images/project1-1.jpg",
+      project1_1,
       "/images/project1-2.jpg", 
       "/images/project1-3.jpg"
     ]

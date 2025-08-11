@@ -1,10 +1,10 @@
-import { TeamCard } from "./TeamCard";
+import TeamCard from "../components/TeamCard";
 import teamData from "../data/team";
 import SectionWrapper from "../hoc";
 
 const Team = () => {
   return (
-    <div className="bg-gray-50 py-16 px-4">
+    <div className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">

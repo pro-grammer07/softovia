@@ -1,7 +1,7 @@
 import React from 'react'
 import { Check } from "lucide-react";
 import hero_image from "../assets/Hero.png"; // Assuming you have a hero image
-import { Button } from './Button';
+import { Button } from '../components/Button';
 import SectionWrapper from '../hoc';
 import { styles } from '../styles';
 

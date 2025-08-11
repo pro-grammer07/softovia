@@ -23,7 +23,7 @@ const PlanCard = ({
       className={`
         ${theme.bgColor} 
         ${showBorder ? `border ${theme.border}` : ''} 
-        rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 h-130 w-90 flex flex-col hover:scale-105
+        rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 h-130 w-80 flex flex-col hover:scale-105
         ${plan.featured ? 'ring-2 ring-blue-200 scale-100' : ''}
         ${className}
       `}

@@ -1,20 +1,22 @@
 import React from 'react';
 import { footerData } from '../data';
+import logo from '../assets/Vector.png'; // Adjust the path as necessary
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 border-t border-blue-500 py-12 px-4">
+    <footer className="bg-[#EFF7FF] border-t border-blue-500 py-12 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           
           {/* Left Side - Logo and Description */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-1">
-              <span className="text-blue-500 text-2xl font-bold">•</span>
-              <h3 className="text-2xl font-bold text-gray-900">
-                {footerData.logo.name}
-              </h3>
-            </div>
+        {/* Logo */}
+        <div className="flex items-center space-x-4 cursor-pointer">
+          <img src={logo} alt="Softovia Logo" className="h-12 w-16" />
+          <span className="text-blue-600 text-3xl font-semibold tracking-wide">
+            SOFTOVIA
+          </span>
+        </div>
             
             <p className="text-gray-600 text-sm leading-relaxed max-w-md">
               {footerData.description}

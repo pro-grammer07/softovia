@@ -8,7 +8,7 @@ import marketplace_icon from './services/marketplace_icon.png';
 import saas_apps from './services/saas_apps.png';
 import social_networks from './services/social_networks.png';
 import zapier_webhooks from './services/zapier_webhooks.png';
-
+import project1_1 from './projects/project1-1.jpeg'; // Ensure this path is correct
 
 export {
   crm,
@@ -20,5 +20,6 @@ export {
     marketplace_icon,
     saas_apps,
     social_networks,
-    zapier_webhooks
+    zapier_webhooks,
+    project1_1
 };

@@ -2,6 +2,7 @@ import contactData
  from "../data/contact";
 import { Phone, Mail, Calendar, Facebook, Linkedin, Twitter } from 'lucide-react';
 import { useState } from "react";
+import { styles } from "../styles";
 
 
 export const ContactInfo = () => {
@@ -17,7 +18,7 @@ export const ContactInfo = () => {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <h1 className={`${styles.heroHeadText} font-bold text-gray-900 mb-6`}>
           {contactData.title}
         </h1>
         <p className="text-gray-600 text-lg leading-relaxed">

@@ -22,6 +22,21 @@ const ProjectDetail = ({
     }
   };
 
+  const handleGetInTouch = () => {
+    if (onBack) {
+      onBack();
+    }
+    // Delay to allow navigation before scrolling to contact
+    setTimeout(() => {
+      const contactSection = document.querySelector('#contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.location.hash = '#contact';
+      }
+    }, 100);
+  };
+
   if (!project) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -41,14 +56,14 @@ const ProjectDetail = ({
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="bg-gray-50 border-b">
+      <div className="bg-blue-100 border-b">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 py-8">
           <button
             onClick={handleBack}
-            className="flex items-center text-gray-600 hover:text-gray-900 mb-6 transition-colors"
+            className="flex items-center text-gray-600 hover:text-gray-900 mb-6 transition-colors cursor-pointer hover:underline"
           >
             <ArrowLeft className="w-5 h-5 mr-2" />
-            Back to Projects
+            Back to Home
           </button>
           
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -85,41 +100,20 @@ const ProjectDetail = ({
               </div>
             </div>
 
-            {/* Project Image */}
-            <div className="relative">
-              <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-8">
-                <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
-                  <div className="bg-gray-100 px-4 py-3 flex items-center">
-                    <div className="flex space-x-2">
-                      <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                      <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                      <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                    </div>
-                    <div className="flex-1 mx-4">
-                      <div className="bg-white rounded px-3 py-1 text-xs text-gray-500 text-center">
-                        {project.client || 'demo.example.com'}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="h-64 bg-gradient-to-br from-gray-50 to-gray-100">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xMDAgODBWMTIwTTgwIDEwMEgxMjAiIHN0cm9rZT0iIzlDQTNBRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+';
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
+            {/* Project Main Image */}
+            <div>
+              <img 
+                src={project.gallery?.[0] || project.gallery} 
+                alt={project.title} 
+                className="w-full h-auto rounded-2xl shadow-lg object-cover"
+              />
             </div>
           </div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 lg:px-18 py-16">
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-12">
@@ -136,6 +130,23 @@ const ProjectDetail = ({
                 ))}
               </div>
             </section>
+
+            {/* Screenshots */}
+            {project.gallery && project.gallery.length > 0 && (
+              <section>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Screenshots</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-4">
+                  {project.gallery.map((img, index) => (
+                    <img 
+                      key={index}
+                      src={img} 
+                      alt={`${project.title} screenshot ${index + 1}`} 
+                      className="w-full h-auto object-cover rounded-lg shadow"
+                    />
+                  ))}
+                </div>
+              </section>
+            )}
 
             {/* Challenges */}
             {project.challenges && (
@@ -171,7 +182,7 @@ const ProjectDetail = ({
           {/* Sidebar */}
           <div className="space-y-8">
             {/* Project Info */}
-            <div className="bg-gray-50 rounded-xl p-6">
+            <div className="bg-blue-100 rounded-xl p-6">
               <h3 className="font-semibold text-gray-900 mb-4">Project Info</h3>
               <div className="space-y-4">
                 <div className="flex items-center">
@@ -201,7 +212,7 @@ const ProjectDetail = ({
             </div>
 
             {/* Technologies */}
-            <div className="bg-gray-50 rounded-xl p-6">
+            <div className="bg-blue-100 rounded-xl p-6">
               <h3 className="font-semibold text-gray-900 mb-4">Technologies Used</h3>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, index) => (
@@ -216,10 +227,13 @@ const ProjectDetail = ({
             </div>
 
             {/* CTA */}
-            <div className="bg-blue-500 rounded-xl p-6 text-white">
+            <div className="bg-blue-600 rounded-xl p-6 text-white">
               <h3 className="font-semibold mb-2">Interested in similar work?</h3>
               <p className="text-blue-100 text-sm mb-4">Let's discuss your project requirements.</p>
-              <button className="w-full bg-white text-blue-500 py-2 px-4 rounded-lg font-medium hover:bg-blue-50 transition-colors">
+              <button 
+                onClick={handleGetInTouch}
+                className="w-full bg-white border-2 border-white text-blue-600 py-2 px-4 rounded-lg font-medium hover:bg-blue-600 hover:text-white transition-colors"
+              >
                 Get in Touch
               </button>
             </div>

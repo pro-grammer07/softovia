@@ -1,9 +1,10 @@
 // Projects.jsx
 import React from 'react';
-import ProjectCard from './ProjectCard';
-import { projectsData } from '../data/projects';
+import ProjectCard from '../components/ProjectCard';
+import projectsData from '../data/projects';
 import SectionWrapper from '../hoc';
 import { Section } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Projects = ({ 
   projects = projectsData,
@@ -16,7 +17,9 @@ const Projects = ({
 
   const handleLearnMore = (project) => {
     if (onProjectSelect) {
-      onProjectSelect(project);
+        console.log("project handlelearn more:", project);
+        console.log("onProjectSelect:", onProjectSelect);
+        onProjectSelect(project);
     }
   };
 
@@ -27,7 +30,7 @@ const Projects = ({
   };
 
   return (
-    <section className={`py-16 px-4 lg:px-8 bg-gray-50 ${className}`}>
+    <section className={`py-16 px-4 lg:px-8 ${className}`}>
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
