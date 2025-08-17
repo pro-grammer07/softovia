@@ -1,6 +1,10 @@
+import { motion } from "framer-motion";
+import { fadeIn } from "../utils/motion";
+
+
 const TeamCard = ({ member }) => {
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:scale-110 ">
+    <motion.div variants={fadeIn("up", "spring", member.id * 0.5, 0.75)} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:scale-110 ">
       <div className="mb-6">
         <img
           src={member.image}
@@ -22,7 +26,7 @@ const TeamCard = ({ member }) => {
           {member.description}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

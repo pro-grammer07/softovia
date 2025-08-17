@@ -30,7 +30,7 @@ const Projects = ({
   };
 
   return (
-    <section className={`py-16 px-4 lg:px-8 ${className}`}>
+    <section className={`py-0 px-4 lg:px-8 ${className}`}>
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">

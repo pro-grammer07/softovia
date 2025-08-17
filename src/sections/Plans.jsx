@@ -27,9 +27,9 @@ const Plans = ({
   };
 
   return (
-    <div className="mt-[200px]">
+    <div className="mt-[30px]">
 <h1 className={styles.heroHeadText}>Project Plans</h1>
-    <section className={`py-12 px-2 mt-[48px] ${containerClassName}`}>
+    <section className={`py-12 px-2 mt-[30px] ${containerClassName}`}>
       <div className="max-w-8xl mx-auto">
         {/* Section Header (Optional) */}
         {showTitle && (

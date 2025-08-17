@@ -1,7 +1,8 @@
 // PlanCard.jsx
 import React from 'react';
 import { Check } from 'lucide-react';
-
+import { motion } from 'framer-motion';
+import { fadeIn } from '../utils/motion';
 
 const PlanCard = ({ 
   plan, 
@@ -19,7 +20,8 @@ const PlanCard = ({
   };
 
   return (
-    <div 
+    <motion.div
+      variants={fadeIn("up", "spring", plan.id * 0.5, 0.75)} 
       className={`
         ${theme.bgColor} 
         ${showBorder ? `border ${theme.border}` : ''} 
@@ -95,7 +97,7 @@ const PlanCard = ({
           </span>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

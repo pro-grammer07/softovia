@@ -41,9 +41,11 @@ const Header = () => {
             p-6 md:p-0
           `}
         >
-          <span className={styles.navLinkText}>Our Work</span>
-          <span className={styles.navLinkText}>Our Team</span>
-          <Button variant="default" className="w-full md:w-40 h-12">
+          <a className={styles.navLinkText} href="#projects">Our Work</a>
+          <a className={styles.navLinkText} href="#team">Our Team</a>
+          <Button variant="default" className="w-full md:w-40 h-12"   onClick={() => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  }}>
             Contact Us
           </Button>
         </nav>

@@ -26,13 +26,26 @@ const ProjectDetail = ({
     if (onBack) {
       onBack();
     }
-    // Delay to allow navigation before scrolling to contact
     setTimeout(() => {
       const contactSection = document.querySelector('#contact');
       if (contactSection) {
         contactSection.scrollIntoView({ behavior: 'smooth' });
       } else {
         window.location.hash = '#contact';
+      }
+    }, 100);
+  };
+
+  const handleViewMoreProjects = () => {
+    if (onBack) {
+      onBack();
+    }
+    setTimeout(() => {
+      const projectsSection = document.querySelector('#projects');
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.location.hash = '#projects';
       }
     }, 100);
   };
@@ -177,6 +190,7 @@ const ProjectDetail = ({
                 </ul>
               </section>
             )}
+
           </div>
 
           {/* Sidebar */}
@@ -239,7 +253,17 @@ const ProjectDetail = ({
             </div>
           </div>
         </div>
+                    {/* View More Projects Button */}
+            <div className="pt-8 flex justify-center">
+              <button
+                onClick={handleViewMoreProjects}
+                className="bg-blue-600 border-2 text-white px-15 py-3 rounded-lg hover:bg-white hover:border-blue-600 hover:text-blue-600 transition-colors font-medium cursor-pointer"
+              >
+                View More Projects
+              </button>
+            </div>
       </div>
+      
     </div>
   );
 };

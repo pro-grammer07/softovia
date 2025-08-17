@@ -4,7 +4,7 @@ import SectionWrapper from "../hoc";
 
 const Team = () => {
   return (
-    <div className="py-16 px-4">
+    <div className="py-0 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">

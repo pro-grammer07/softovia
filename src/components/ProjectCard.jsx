@@ -1,6 +1,8 @@
 // ProjectCard.jsx
 import React from 'react';
 import { ArrowRight, ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { fadeIn, slideIn } from '../utils/motion';
 
 const ProjectCard = ({ 
   project, 
@@ -27,7 +29,7 @@ const ProjectCard = ({
   const displayImage = project.gallery?.[0] || project.image;
 
   return (
-    <div className={`bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden hover:scale-105 ${className}`}>
+    <motion.div variants={fadeIn("up", "spring", project.id * 0.5, 0.75)}  className={`bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden hover:scale-105 ${className}`}>
       {/* Mobile: column-reverse so image is last, Desktop: row so image is on right */}
       <div className="flex flex-col-reverse lg:flex-row gap-6">
         
@@ -99,7 +101,7 @@ const ProjectCard = ({
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

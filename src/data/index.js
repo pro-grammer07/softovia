@@ -2,10 +2,6 @@ import { mark, title } from "framer-motion/client";
 
 
 
-
-
-
-
 // footer.js data
 export const footerData = {
   logo: {
